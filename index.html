@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Love Song</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    .player {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+    }
+
+    .disc-container {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+
+    .disc {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: url('https://i.imgur.com/U2j5KRB.png') no-repeat center/cover; /* You can replace this vinyl image */
+      animation: rotate 6s linear infinite;
+      border: 5px solid #f5f5f5;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #e6005c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+
+    /* Floating hearts background */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 8s infinite ease-in;
+      opacity: 0.5;
+    }
+
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -50px;
+        left: calc(50% - 10px);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110%;
+        left: calc(50% + 100px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player">
+    <div class="disc-container">
+      <div class="disc"></div>
+    </div>
+    <h1>Our Love Song</h1>
+    <p>Every beat, a memory of us. 🎶❤️</p>
+    <audio controls autoplay loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 60%; animation-delay: 4s;"></div>
+  <div class="heart" style="left: 80%; animation-delay: 1s;"></div>
+
+</body>
+</html>
